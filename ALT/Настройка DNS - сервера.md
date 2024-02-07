@@ -18,7 +18,7 @@ apt-get update && apt-get install -y haveged
 apt-get update && apt-get install bind -y
 ```
 
-2. Редактируем конфигурационный файл по пути "/var/lib/bind/etc/options.conf":
+2. Редактируем конфигурационный файл по пути **"/var/lib/bind/etc/options.conf"**:
 
 ``` bash
 nano /var/lib/bind/etc/options.conf
