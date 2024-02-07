@@ -16,9 +16,9 @@ SRV-HQ
 
 Для ускорения установки можно установить демон энтропии haveged:
 
-    ```bash
-    apt-get update && apt-get install -y haveged
-    ```
+``` bash
+apt-get update && apt-get install -y haveged
+```
 
 Включаем и запускаем службу haveged:
 
