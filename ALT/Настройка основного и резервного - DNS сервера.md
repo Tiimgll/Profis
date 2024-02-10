@@ -39,10 +39,12 @@ nano /etc/bind/options.conf
 Правим конфигурационный файл **"/etc/net/ifaces/ens33/resolv.conf"**:
 
 ``` bash
-cat <<EOF > /etc/net/ifaces/ens33/resolv.conf
+nano /etc/net/ifaces/enp0s3/resolv.conf
+```
+
+``` bash
 search company.prof
 nameserver 127.0.0.1
-EOF
 ```
 
 Перезапускаем службу network:
