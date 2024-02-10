@@ -77,7 +77,11 @@ ALTER USER postgres WITH ENCRYPTED PASSWORD 'P@ssw0rd';
 
 ``` bash
 CREATE DATABASE prod;
+```
+``` bash
 CREATE DATABASE test;
+```
+``` bash
 CREATE DATABASE dev;
 ```
 
@@ -85,12 +89,17 @@ CREATE DATABASE dev;
 
 ``` bash
 CREATE USER produser WITH PASSWORD 'P@ssw0rd';
+```
+``` bash
 CREATE USER testuser WITH PASSWORD 'P@ssw0rd';
+```
+``` bash
 CREATE USER devuser WITH PASSWORD 'P@ssw0rd';
 ```
 
 Назначаем для каждой базы данных соответствующего владельца:
-    для базы данных "prod" назначаем владельцем пользователя "produser":
+
+для базы данных "prod" назначаем владельцем пользователя "produser":
 
 ``` bash
 GRANT ALL PRIVILEGES ON DATABASE prod to produser;
@@ -108,11 +117,21 @@ GRANT ALL PRIVILEGES ON DATABASE test to testuser;
 GRANT ALL PRIVILEGES ON DATABASE dev to devuser;
 ```
 
+Выйти из учет записи "Postgres"
+
+``` bash
+\q
+```
+
 Заполняем базы данных тестовыми данными при помощи утилиты pgbench:
 
 ``` bash
 pgbench -U postgres -i prod
+```
+``` bash
 pgbench -U postgres -i test
+```
+``` bash
 pgbench -U postgres -i dev
 ```
 
@@ -120,7 +139,11 @@ pgbench -U postgres -i dev
 
 ``` bash
 psql -U postgres
+```
+``` bash
 \c prod
+```
+``` bash
 \dt+
 ```
 
@@ -130,10 +153,16 @@ psql -U postgres
 
 ![screen6](https://github.com/Tiimgll/Profis/blob/main/pic/6.PostgreSQL%20-%20%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B8%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B1%D0%B0%D0%B7%20%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%BC%D0%B8%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8%D1%8E.png)
 
+Выйти из учет записи "prod"
+
+``` bash
+\q
+```
+
 Настраиваем парольную аутентификацию для удалённого доступа:
 
 ``` bash
-vim /var/lib/pgsql/data/pg_hba.conf
+nano /var/lib/pgsql/data/pg_hba.conf
 ```
 
 добавляем следующую запись:
@@ -257,5 +286,12 @@ CREATE DATABASE test_replica;
 
 ## SRV-BR:
 Смотрим список всех баз данных:
+
+``` bash
+psql -U postgres
+```
+``` bash 
+\l
+```
 
 ![screen17](https://github.com/Tiimgll/Profis/blob/main/pic/17.PostgreSQL%20-%20%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B8%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B1%D0%B0%D0%B7%20%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%BC%D0%B8%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8%D1%8E.png)
