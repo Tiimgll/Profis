@@ -178,23 +178,27 @@ nano /var/lib/pgsql/data/postgresql.conf
 
 Редактируем следующие параметры:
 
-![screen11]()
+![screen11](https://github.com/Tiimgll/Profis/blob/main/pic/11.PostgreSQL%20-%20%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B8%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B1%D0%B0%D0%B7%20%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%BC%D0%B8%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8%D1%8E.png)
 
-![screen12]()
+![screen12](https://github.com/Tiimgll/Profis/blob/main/pic/12.PostgreSQL%20-%20%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B8%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B1%D0%B0%D0%B7%20%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%BC%D0%B8%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8%D1%8E.png)
 
-![screen13]()
+![screen13](https://github.com/Tiimgll/Profis/blob/main/pic/13.PostgreSQL%20-%20%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B8%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B1%D0%B0%D0%B7%20%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%BC%D0%B8%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8%D1%8E.png)
 
-![screen14]()
+![screen14](https://github.com/Tiimgll/Profis/blob/main/pic/14.PostgreSQL%20-%20%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B8%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B1%D0%B0%D0%B7%20%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%BC%D0%B8%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8%D1%8E.png)
 
 >[!NOTE]
 >wal_level указывает, сколько информации записывается в WAL (журнал операций, который используется для репликации);
 
+>[!NOTE]
 >max_wal_senders — количество планируемых слейвов;
 
+>[!NOTE]
 >max_replication_slots — максимальное число слотов репликации; 
 
+>[!NOTE]
 >hot_standby — определяет, можно или нет подключаться к postgresql для выполнения запросов в процессе восстановления;
 
+>[!NOTE]
 >hot_standby_feedback — определяет, будет или нет сервер slave сообщать мастеру о запросах, которые он выполняет.
 
 
@@ -203,3 +207,54 @@ nano /var/lib/pgsql/data/postgresql.conf
 ``` bash
 systemctl restart postgresql
 ```
+## SRV-BR:
+Останавливаем службу postgres:
+
+``` bash
+systemctl stop postgresql
+```
+
+Удаляем содержимое каталога с данными:
+
+``` bash
+rm -rf /var/lib/pgsql/data/*
+```
+
+И реплицируем данные с SRV-HQ сервера:
+
+``` bash
+pg_basebackup -h 10.0.10.2 -U postgres -D /var/lib/pgsql/data --wal-method=stream --write-recovery-conf
+```
+
+![screen15]()
+
+Назначаем владельца:
+
+``` bash
+chown -R postgres:postgres /var/lib/pgsql/data/
+```
+
+Снова запускаем сервис postgresql:
+
+``` bash
+systemctl start postgresql
+```
+
+## Проверяем репликацию:
+## SRV-HQ:
+Создаём тестовую базу данных:
+
+``` bash
+psql -U postgres
+```
+
+``` bash
+CREATE DATABASE test_replica;
+```
+
+![screen16]()
+
+## SRV-BR:
+Смотрим список всех баз данных:
+
+![screen17]()
