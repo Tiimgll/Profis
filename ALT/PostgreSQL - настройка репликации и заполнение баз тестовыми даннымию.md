@@ -166,3 +166,40 @@ apt-get install -y postgresql16 postgresql16-server postgresql16-contrib
 
 ![screen10](https://github.com/Tiimgll/Profis/blob/main/pic/10.PostgreSQL%20-%20%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B8%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B1%D0%B0%D0%B7%20%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%BC%D0%B8%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8%D1%8E.png)
 
+## Настраиваем репликацию с SRV-HQ на SRV-BR:
+
+## SRV-HQ:
+
+Открываем конфигурационный файл **"/var/lib/pgsql/data/postgresql.conf"**:
+
+``` bash
+nano /var/lib/pgsql/data/postgresql.conf
+```
+
+Редактируем следующие параметры:
+
+![screen11]()
+
+![screen12]()
+
+![screen13]()
+
+![screen14]()
+
+>[!NOTE]
+>wal_level указывает, сколько информации записывается в WAL (журнал операций, который используется для репликации);
+
+>max_wal_senders — количество планируемых слейвов;
+
+>max_replication_slots — максимальное число слотов репликации; 
+
+>hot_standby — определяет, можно или нет подключаться к postgresql для выполнения запросов в процессе восстановления;
+
+>hot_standby_feedback — определяет, будет или нет сервер slave сообщать мастеру о запросах, которые он выполняет.
+
+
+Перезапускаем службу postgresql:
+
+``` bash
+systemctl restart postgresql
+```
