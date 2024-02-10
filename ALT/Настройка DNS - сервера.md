@@ -11,10 +11,6 @@
 1. Обновим пакеты и установим пакет "bind":
 
 ``` bash
-apt-get update && apt-get install -y haveged
-```
-
-``` bash
 apt-get update && apt-get install bind -y
 ```
 
