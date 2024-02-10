@@ -127,7 +127,11 @@ GRANT ALL PRIVILEGES ON DATABASE dev to devuser;
 
 ``` bash
 pgbench -U postgres -i prod
+```
+``` bash
 pgbench -U postgres -i test
+```
+``` bash
 pgbench -U postgres -i dev
 ```
 
@@ -135,7 +139,11 @@ pgbench -U postgres -i dev
 
 ``` bash
 psql -U postgres
+```
+``` bash
 \c prod
+```
+``` bash
 \dt+
 ```
 
