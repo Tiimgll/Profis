@@ -90,7 +90,8 @@ CREATE USER devuser WITH PASSWORD 'P@ssw0rd';
 ```
 
 Назначаем для каждой базы данных соответствующего владельца:
-    для базы данных "prod" назначаем владельцем пользователя "produser":
+
+для базы данных "prod" назначаем владельцем пользователя "produser":
 
 ``` bash
 GRANT ALL PRIVILEGES ON DATABASE prod to produser;
@@ -106,6 +107,9 @@ GRANT ALL PRIVILEGES ON DATABASE test to testuser;
 
 ``` bash
 GRANT ALL PRIVILEGES ON DATABASE dev to devuser;
+```
+``` bash
+\q
 ```
 
 Заполняем базы данных тестовыми данными при помощи утилиты pgbench:
