@@ -25,7 +25,7 @@ apt-get update && apt-get install -y bind bind-utils
 nano /etc/bind/options.conf
 ```
 
-![screen1]()
+![screen1](https://github.com/Tiimgll/Profis/blob/main/pic/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%20%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE%20-%20DNS%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0/1.%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%20%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE%20-%20DNS%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0.png)
 
 >[!NOTE]
 >listen-on { any; }; - Этот параметр определяет адреса и порты, на которых DNS-сервер будет слушать запросы. Значение any означает, что сервер будет прослушивать запросы на всех доступных интерфейсах и IP-адресах.
@@ -63,7 +63,7 @@ systemctl enable --now bind
 ping ya.ru
 ```
 
-![screen2]()
+![screen2](https://github.com/Tiimgll/Profis/blob/main/pic/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%20%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE%20-%20DNS%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0/2.%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%20%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE%20-%20DNS%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0.png)
 
 Созданиём зону прямого просмотра и обратного просмотра, добавляем в конфигурационный файл **"/etc/bind/local.conf"**:
 
@@ -71,7 +71,7 @@ ping ya.ru
 nano /etc/bind/local.conf
 ```
 
-![screen3]()
+![screen3](https://github.com/Tiimgll/Profis/blob/main/pic/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%20%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE%20-%20DNS%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0/3.%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%20%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE%20-%20DNS%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0.png)
 
 >[!NOTE]
 >zone "..." { ... }; : Это начало определения зоны. В кавычках указывается имя зоны, которое следует разрешать на этом сервере.
@@ -114,3 +114,12 @@ chown root:named /etc/bind/zone/20.0.10.in-addr.arpa.db
 ``` bash
 nano /etc/bind/zone/company.db
 ```
+
+
+
+
+
+
+
+
+
