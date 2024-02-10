@@ -77,7 +77,11 @@ ALTER USER postgres WITH ENCRYPTED PASSWORD 'P@ssw0rd';
 
 ``` bash
 CREATE DATABASE prod;
+```
+``` bash
 CREATE DATABASE test;
+```
+``` bash
 CREATE DATABASE dev;
 ```
 
@@ -85,7 +89,11 @@ CREATE DATABASE dev;
 
 ``` bash
 CREATE USER produser WITH PASSWORD 'P@ssw0rd';
+```
+``` bash
 CREATE USER testuser WITH PASSWORD 'P@ssw0rd';
+```
+``` bash
 CREATE USER devuser WITH PASSWORD 'P@ssw0rd';
 ```
 
@@ -108,6 +116,9 @@ GRANT ALL PRIVILEGES ON DATABASE test to testuser;
 ``` bash
 GRANT ALL PRIVILEGES ON DATABASE dev to devuser;
 ```
+
+Выйти из учет записи "Postgres"
+
 ``` bash
 \q
 ```
