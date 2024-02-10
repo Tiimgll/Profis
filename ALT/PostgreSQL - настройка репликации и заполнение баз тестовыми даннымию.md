@@ -162,7 +162,7 @@ psql -U postgres
 Настраиваем парольную аутентификацию для удалённого доступа:
 
 ``` bash
-vim /var/lib/pgsql/data/pg_hba.conf
+nano /var/lib/pgsql/data/pg_hba.conf
 ```
 
 добавляем следующую запись:
