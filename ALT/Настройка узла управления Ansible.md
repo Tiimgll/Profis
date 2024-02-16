@@ -4,15 +4,15 @@
 
 a)	Настройте узел управления на базе SRV-BR
 
-    a.	Установите Ansible.
+  a.	Установите Ansible.
 
 b)	Сконфигурируйте инвентарь по пути /etc/ansible/inventory. Инвентарь должен содержать три группы устройств:
 
-    a.	Networking
+  a.	Networking
 
-    b.	Servers
+  b.	Servers
 
-    c.	Clients
+  c.	Clients
 
 c)	Напишите плейбук в /etc/ansible/gathering.yml для сбора информации об IP адресах и именах всех устройств (и клиенты, и серверы, и роутеры). Отчет должен быть сохранен в /etc/ansible/output.yaml, в формате ПОЛНОЕ_ДОМЕННОЕ_ИМЯ – АДРЕС
 
