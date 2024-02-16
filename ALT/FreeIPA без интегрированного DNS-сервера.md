@@ -41,13 +41,13 @@ ipa-server-install
 
 2, 3, 4 - нужно указать имя узла на котором будет установлен сервер FreeIPA, доменное имя и пространство Kerberos;
 
-![screen1]()
+![screen1](https://github.com/Tiimgll/Profis/blob/main/pic/FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0/1.FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0.png)
 
 1 - задаётся и подтверждается пароль для Director Manager;
 
 2 - задаётся и подтверждается пароль для администратора FreeIPA;
 
-![screen2]()
+![screen2](https://github.com/Tiimgll/Profis/blob/main/pic/FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0/2.FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0.png)
 
 1 - указывается имя NetBIOS;
 
@@ -55,11 +55,11 @@ ipa-server-install
 
 3 - Далее необходимо проверить информацию о конфигурации и подтвердить ответив yes:
 
-![screen3]()
+![screen3](https://github.com/Tiimgll/Profis/blob/main/pic/FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0/3.FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0.png)
 
 Проверяем запущенные службы FreeIPA:
 
-![screen4]()
+![screen4](https://github.com/Tiimgll/Profis/blob/main/pic/FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0/4.FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0.png)
 
 ### Далее выполняем создание необходимых групп и пользователей:
 Пользователей и группы можно накликать и в веб-интерфейсе FreeIPA с CLI-HQ
@@ -72,7 +72,7 @@ kinit admin
 
 вводим пароль доменного пользователя admin:
 
-![screen5]()
+![screen5](https://github.com/Tiimgll/Profis/blob/main/pic/FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0/5.FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0.png)
 
 Используя цикл for создадим 30 пользователей: user№ с паролем P@ssw0rd, а также сменим срок действия пароля до 2025 года, чтобы при входе из под пользователя на не пришлось менять пароль:
 
@@ -139,7 +139,7 @@ ipa-client-install --mkhomedir
 >[!NOTE]
 >Далее сценарий установки настраивает клиент.
 
-![screen6]()
+![screen6](https://github.com/Tiimgll/Profis/blob/main/pic/FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0/6.FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0.png)
 
 перезапускаем клиента:
 
@@ -149,20 +149,10 @@ reboot
 
 Также после ввода в домен - CLI-HQ автоматически доверяет интегрированному Корневому Центру Сертификации FreeIPA:
 
-![screen7]()
+![screen7](https://github.com/Tiimgll/Profis/blob/main/pic/FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0/7.FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0.png)
 
-![screen8]()
+![screen8](https://github.com/Tiimgll/Profis/blob/main/pic/FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0/8.FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0.png)
 
-![screen9]()
-
-
-
-
-
-
-
-
-
-
+![screen9](https://github.com/Tiimgll/Profis/blob/main/pic/FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0/9.FreeIPA%20%D0%B1%D0%B5%D0%B7%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0.png)
 
 
